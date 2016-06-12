@@ -1,0 +1,19 @@
+.gameGlobalDiv {
+  position: relative;
+  background-color: black;
+}
+.gameCanvas {
+  position: absolute;
+  width=100%;
+  height=100%;
+  background-color:transparent;
+}
+.gamePauseMenu {
+  display:none;
+  margin:auto;
+}
+.gameHudItem {
+  position:absolute;
+  left:0px;
+  right:0px;
+}
