@@ -1,3 +1,7 @@
+/**
+ * author : Loic France
+ * created 05/31/2016
+ */
 'use strict';var Utils={merge:function(a,b,c){c=void 0===c?!1:c;for(var d in b)if(c||!a.hasOwnProperty(d))a[d]=b[d]},globalize:function(a){for(var b in a)window.hasOwnProperty(b)?console.error("the property "+b+" already exists in global space."):window[b]=a[b]},intersectionFilter:function(a,b){return-1!=a.indexOf(b)},exclusionFilter:function(a,b){return-1==a.indexOf(b)}};
 window.classExtend||(window.classExtend=function(a,b){b.prototype=Object.create(a.prototype);b.prototype.constructor=b;b.super=a.prototype});window.override||(window.override=function(a,b,c){_super=a.prototype[b];a.prototype[b]=c;return _super});window.exists||(window.exists=function(a){return void 0!==a});window.isNull||(window.isNull=function(a){return void 0===a||null===a});window.createProperties||(window.createProperties=function(a,b,c){c||(c={});b&&Utils.merge(c,b);a&&Utils.merge(c,a);return c});
 window.getStringFromUrl||(window.getStringFromUrl=function(a,b){var c=new XMLHttpRequest;c.open("GET",a);c.onreadystatechange=function(a){return b(c.responseText)};c.send()});window.TYPE_UNDEFINED="undefined";window.TYPE_OBJECT="object";window.TYPE_BOOLEAN="boolean";window.TYPE_NUMBER="number";window.TYPE_STRING="string";window.TYPE_FUNCTION="function";console.stack=function(a){console.error(Error(a).stack)};console.deprecated=function(a){console.stack("deprecated : "+a)};
